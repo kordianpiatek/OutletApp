@@ -1,0 +1,7 @@
+app:
+    resource: '@AppBundle/Controller/'
+    type: annotation
+
+get_product:
+   path:     /ajax_request
+   defaults: { _controller: AppBundle:Product:getproducts }

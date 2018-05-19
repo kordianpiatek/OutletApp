@@ -1,0 +1,60 @@
+<div class="row">
+	<div class="col">
+	{% for product in products %}
+		<div class="row">
+			<div class="col" align="center">
+				{% if loop.index is not divisible by(2) %}
+					<img src="{{ asset("assets/images/")~product.image}}" alt="Clothes" />
+				{% endif %}
+			</div>
+		</div>
+		<div class="row">
+			<div class="col" align="center" >
+				{% if loop.index is not divisible by(2) %}
+					<strong>{{product.price}} PLN</strong>
+				{% endif %}
+			</div>
+		</div>
+		<div class="row">
+			<div class="col" align="center">
+				{% if loop.index is not divisible by(2) %}
+					{{product.name}}
+				{% endif %}
+			</div>
+		</div>
+	{% else %}
+		Nie znaleziono produktów.
+	{% endfor %}
+	</div>
+	<div class="col">
+	{% for product in products %}
+		<div class="row">
+			<div class="col" align="center">
+				{% if loop.index is divisible by(2) %}
+					<img src="{{ asset("assets/images/")~product.image}}" alt="Clothes" />
+				{% endif %}
+			</div>
+		</div>
+		<div class="row">
+			<div class="col" align="center" >
+				{% if loop.index is divisible by(2) %}
+					<strong>{{product.price}} PLN</strong>
+				{% endif %}
+			</div>
+		</div>
+		<div class="row" align="centre">
+			<div class="col" align="center">
+				{% if loop.index is divisible by(2) %}
+					{{product.name}}
+				{% endif %}
+			</div>
+		</div>
+	{% else %}
+		Nie znaleziono produktów.
+	{% endfor %}
+	</div>	
+</div>
+<br>
+<br>
+<input type="hidden" id="rowperpage" name="rowperpage" value='{{rowperpage}}'>
+<center><button type="button" class="btn btn-primary"  onclick="getProducts('{{product_type}}',{{rowperpage}}+4);">POKAŻ NASTĘPNE</button></center>

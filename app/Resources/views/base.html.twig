@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../../../favicon.ico">
+
+    <title>{% block title %}Fashion Outlet{% endblock %}</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+	
+	{% block stylesheets %}{% endblock %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    <!-- Custom styles for this template -->
+    <!--link href="product.css" rel="stylesheet">
+  <script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/62C684F6-5943-DD4E-B7A7-6563CD3371BE/main.js" charset="UTF-8"></script--></head>
+
+  <body>
+	<div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
+      <div class="col-md-9 p-lg-1 mx-auto my-1">
+        <h1 class="display-3 font-weight-normal">Fashion Outlet</h1>
+		<p class="lead font-weight-normal">-- Twoje miejsce z ciuchami --</p>
+          <i><p class="lead font-weight-normal">Najlepszy outlet we Wrocławiu z ubraniami znanych projektantów w niskich cenach</p></i>
+          <p class="lead font-weight-normal">Wrocław ul.Kazimierza Wielkiego</p>
+      </div>
+      <div class="product-device box-shadow d-none d-md-block"></div>
+      <div class="product-device product-device-2 box-shadow d-none d-md-block"></div>
+    </div>
+	
+	<nav class="site-header sticky-top py-0" style="background-color: #262626">
+      <div class="container d-flex flex-column flex-md-row justify-content-between">
+		<a class="py-2 d-none d-md-inline-block" href="#"></a>
+		<a class="py-2 d-none d-md-inline-block" href="#" style="color: whitesmoke" onclick="getProducts('all',4);">Wszystkie</a>
+        <a class="py-2 d-none d-md-inline-block" href="#" style="color: whitesmoke" onclick="getProducts('women',4);">Kobiety</a>
+		<a class="py-2 d-none d-md-inline-block" href="#" style="color: whitesmoke" onclick="getProducts('men',4);">Mężczyzni</a>
+        <a class="py-2 d-none d-md-inline-block" href="#" style="color: whitesmoke" onclick="getProducts('kids',4);">Dzieci</a>
+        <a class="py-2 d-none d-md-inline-block" href="#" style="color: whitesmoke" onclick="getProducts('baby',4);">Niemowlęta</a>
+		<a class="py-2 d-none d-md-inline-block" href="#"></a>
+      </div>
+    </nav>
+	
+	{% block body %}{% endblock %}       
+        
+    <footer class="container py-5">
+	  <h5>Nie przepłacaj !</h5>
+      <div class="row">
+        <div class="col-6 col-md">
+          <p class="text-muted text-small" >Nasz outlet oferuje modę najwyższej jakości, która jest przyjazna dla ludzi, środowiska i portfela.</p>
+        </div>
+        <div class="col-6 col-md">
+          <h6>Potrzebujesz więcej informacji?</h6>
+          <p class="text-muted text-small" >Telefon: 456 789 234</p>
+            <p class="text-muted text-small" >E-mail: outlet@gmail.com</p>
+            <p class="text-muted text-small" >Facebook: outletWrocław</p>
+        </div>        
+      </div>
+    </footer>
+
+	{% block javascripts %}{% endblock %}
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+	<script src={{ asset('assets/js/products.js')}}></script>
+	</body>
+</html>
